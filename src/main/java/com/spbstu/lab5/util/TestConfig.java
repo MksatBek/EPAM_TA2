@@ -1,4 +1,4 @@
-package com.spbstu.lab4.utilities;
+package com.spbstu.lab5.util;
 
 import org.aeonbits.owner.Config;
 
@@ -12,4 +12,7 @@ public interface TestConfig extends Config {
 
     @Key("webdriver.chrome.driver")
     String pathToDriver();
+
+    @Key("webdriver.folder")
+    String driverFolder();
 }

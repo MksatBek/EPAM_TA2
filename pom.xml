@@ -13,8 +13,9 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <webdriver.chrome.driver>C:\Users\Mori\Desktop\3 курс\Тестирование\chromedriver_win32\chromedriver.exe</webdriver.chrome.driver>
-        <webdriver.folder>C:\Users\Mori\Desktop\3 курс\Тестирование\chromedriver_win32</webdriver.folder>
+        <webdriver.chrome.driver>C:\Users\Mori\Desktop\3course\Testing\chromedriver_win32\chromedriver.exe
+        </webdriver.chrome.driver>
+        <webdriver.folder>C:\Users\Mori\Desktop\3course\Testing\chromedriver_win32</webdriver.folder>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <homepage.url>https://jdi-framework.github.io/tests/index.htm</homepage.url>
         <listener>ru.yandex.qatools.allure.testng.AllureTestListener</listener>
@@ -121,10 +122,14 @@
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                     </argLine>
                     <systemPropertyVariables>
-                        <webdriver.chrome.driver>C:\Users\Mori\Desktop\3 курс\Тестирование\chromedriver_win32\chromedriver.exe
+                        <webdriver.chrome.driver>
+                            C:\Users\Mori\Desktop\3course\Testing\chromedriver_win32\chromedriver.exe
                         </webdriver.chrome.driver>
                         <homepage.url>https://jdi-framework.github.io/tests/index.htm</homepage.url>
                     </systemPropertyVariables>
+                    <suiteXmlFiles>
+                        <suiteXmlFiles>src/test/resources/runners/${test.runner}</suiteXmlFiles>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>

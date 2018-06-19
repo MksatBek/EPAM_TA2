@@ -1,17 +1,19 @@
 package com.spbstu.lab5.enums;
 
 public enum PAGE_DATA {
+    SITE("https://jdi-framework.github.io/tests/index.htm"),
+    TITLE("Index Page"),
     LOGIN("epam"),
     PASSWORD("1234"),
-    EXPECTED_RESULT(new String[]{"Summary: 5, Elements: Water, Fire, Color: Red, Metal: Gold, Vegetables: Cucumber",
-            "Summary: 9, Elements: Earth, Wind, Color: Green, Metal: Silver, Vegetables: Tomato, Salad",
-            "Summary: 15, Elements: Earth, Fire, Color: Blue, Metal: Bronze, Vegetables: Tomato, Salad, Onion",
-            "Summary: 11, Elements: Water, Wind, Color: Yellow, Metal: Selen, Vegetables: Cucumber, Onion",
-            "Summary: 9, Elements: Water, Earth, Wind, Fire, Color: Blue, Metal: Selen, Vegetables: Cucumber, Tomato, Salad, Onion"}),
-    ELEMENTS(new String[]{"Wind", "Water", "Earth", "Fire"}),
-    VEGETABLES(new String[]{"Cucumber", "Salad", "Onion", "Tomato"});
+    USER_NAME("PITER CHAILOVSKII"),
+    ACTUAL_ICONS_NUMBERS(4),
+    TEXT(new String[]{"To include good practices\nand ideas from successful\nEPAM projec", "To be flexible and\ncustomizable", "To be multiplatform",
+            "Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more…"}),
+    MAIN_HEADER("EPAM FRAMEWORK WISHES…"),
+    HOME_PAGE("LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR."),
+    SERVICE(new String[]{"Service", "Support", "Dates", "Complex Table", "Simple Table", "Table with pages", "Different elements"});
 
-    public String[] strAr;
+    public String[] strArVal;
     public String str;
     public Integer i;
 
@@ -23,7 +25,7 @@ public enum PAGE_DATA {
         this.i = i;
     }
 
-    PAGE_DATA(String[] strAr) {
-        this.strAr = strAr;
+    PAGE_DATA(String[] strArVal) {
+        this.strArVal = strArVal;
     }
 }

@@ -53,11 +53,11 @@ public class DifferentElementsPages {
     }
 
 
-    public void checkDiffBoxexExists() {
+    public void checkDiffBoxesExists() {
         for (SelenideElement checkBox : checkBoxes) {
             checkBox.shouldBe(Condition.visible);
         }
-        for (SelenideElement radio: radios){
+        for (SelenideElement radio : radios) {
             radio.shouldBe(Condition.visible);
         }
 

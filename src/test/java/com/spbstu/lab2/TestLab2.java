@@ -1,12 +1,12 @@
 package com.spbstu.lab2;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,8 +15,6 @@ public class TestLab2 {
     private WebDriver driver;
 
     @Before
-
-    @BeforeSuite
     public void beforeSuite() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
@@ -24,7 +22,7 @@ public class TestLab2 {
         PageObject.initHP(this.driver);
     }
 
-    @AfterTest
+    @AfterSuite
     public void after() {
         PageObject.homePage.driver.close();
     }
@@ -45,7 +43,7 @@ public class TestLab2 {
         assertEquals(PageObject.homePage.getIconsNumber(), PAGE_DATA.ICONS_NUMBERS.i);
 
         for (int i = 0; i < PAGE_DATA.ICONS_NUMBERS.i; i++) {
-            assertEquals(PageObject.homePage.getPictureText(i), PAGE_DATA.TEXT.strAr[i]);
+            assertEquals(PageObject.homePage.getPictureText(i), PAGE_DATA.TEXT.strArVal[i]);
         }
 
         assertEquals(PageObject.homePage.getMainTitle(), PAGE_DATA.MAIN_HEADER.str);

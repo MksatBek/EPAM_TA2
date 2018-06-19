@@ -47,16 +47,19 @@ public class HomePageSelenide {
     public HomePageSelenide() {
         Selenide.page(this);
     }
+
     @Step(" Open url")
     public static void open() {
         Selenide.open(ConfigFactory.create(TestConfig.class).homepage());
         Selenide.zoom(0.5);
 
     }
+
     @Step("Get title")
     public String getTitle() {
         return Selenide.title();
     }
+
     @Step("check Logged User")
     public void checkLoggedIn(String Login, String Password) {
         profileIcon.click();
@@ -65,11 +68,13 @@ public class HomePageSelenide {
         enterIn.click();
         logOutIn.shouldBe(Condition.visible);
     }
+
     @Step("check UserName")
     public void checkUserName(String Username) {
         profileIcon.shouldBe(Condition.visible);
         profileIcon.shouldHave(Condition.text(Username));
     }
+
     @Step("check Icons And Texts Exists")
     public void checkIconsAndTextsExists() {
         for (int i = 0; i < 4; i++) {
@@ -77,16 +82,19 @@ public class HomePageSelenide {
             textsIn.get(i).shouldBe(Condition.visible);
         }
     }
+
     @Step("check MainTitle")
     public void checkMainTitle(String mainTitle) {
         mainTitleIn.shouldBe(Condition.visible);
         mainTitleIn.shouldHave(Condition.text(mainTitle));
     }
+
     @Step("check MainText")
     public void checkMainText(String mainText) {
         mainTextIn.shouldBe(Condition.visible);
         mainTextIn.shouldHave(Condition.text(mainText));
     }
+
     @Step("check MainText")
     public void checkServiceButtons(String[] str) {
         serviceLeftSection.click();

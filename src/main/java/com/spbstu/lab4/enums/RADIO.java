@@ -1,4 +1,4 @@
-package com.spbstu.lab3.enums;
+package com.spbstu.lab4.enums;
 
 public enum RADIO {
     GOLD("Gold"),

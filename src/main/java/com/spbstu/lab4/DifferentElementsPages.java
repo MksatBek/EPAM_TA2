@@ -52,8 +52,8 @@ public class DifferentElementsPages {
         Selenide.page(this);
     }
 
-    @Step("check DiffBoxe Exists")
-    public void checkDiffBoxexExists() {
+    @Step("check DiffBoxes Exists")
+    public void checkDiffBoxesExists() {
         for (int i = 0; i < 4; i++) {
             checkBoxes.get(i).shouldBe(Condition.visible);
             radios.get(i).shouldBe(Condition.visible);
@@ -64,6 +64,7 @@ public class DifferentElementsPages {
         defaultButton.shouldBe(Condition.visible);
         button.shouldBe(Condition.visible);
     }
+
     @Step("select Box Elements")
     public void selectBoxElements(String str) {
         for (int i = 0; i < 4; i++) {
@@ -72,7 +73,8 @@ public class DifferentElementsPages {
             }
         }
     }
-    @Step("select Radio Elements")
+
+    @Step("select radio Elements")
     public void selectRadioElements(String str) {
         for (int i = 0; i < 4; i++) {
             if (radios.get(i).getText().contains(str)) {
@@ -80,26 +82,29 @@ public class DifferentElementsPages {
             }
         }
     }
+
     @Step("select Color Element")
     public void selectColorElement(String str) {
         $(".colors .uui-form-element").selectOption(str);
     }
 
     @Step("check Selected Elements")
-    public void checkSelectedElements(String[] strAr) {
+    public void checkSelectedElements(String[] strArval) {
         for (int i = 0; i < 6; i++) {
-            Logs.get(i).shouldHave(Condition.text(strAr[i]));
+            Logs.get(i).shouldHave(Condition.text(strArval[i]));
         }
     }
+
     @Step("check Selected Elements")
-    public void checkUnselectedElements(String[] strAr) {
+    public void checkUnselectedElements(String[] strArval) {
         for (int i = 0; i < Logs.size(); i++)
             System.out.println(Logs.get(i).getText());
 
         for (int i = 4; i < 6; i++) {
-            Logs.get(i).shouldHave(Condition.text(strAr[i]));
+            Logs.get(i).shouldHave(Condition.text(strArval[i]));
         }
     }
+
     @Step("check Slide Positions")
     public void checkSlidePositions(int left, int right) {
         Integer length = sliderLength.getSize().width;

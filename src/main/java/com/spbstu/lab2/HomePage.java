@@ -3,7 +3,6 @@ package com.spbstu.lab2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.List;
 
@@ -63,7 +62,9 @@ public class HomePage {
         return ProfilePhoto.getText();
     }
 
-    public Integer getIconsNumber() { return IconsPage.size(); }
+    public Integer getIconsNumber() {
+        return IconsPage.size();
+    }
 
     public String getPictureText(int i) {
         return TextsIn.get(i).getText();

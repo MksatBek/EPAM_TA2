@@ -1,6 +1,9 @@
 package com.spbstu.lab4;
 
+import com.spbstu.lab4.enums.CHECK_BOX;
+import com.spbstu.lab4.enums.DROP_COLOR;
 import com.spbstu.lab4.enums.PAGE_DATA;
+import com.spbstu.lab4.enums.RADIO;
 import com.spbstu.lab4.utilities.TestConfig;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
@@ -10,9 +13,9 @@ import ru.yandex.qatools.allure.annotations.Step;
 import ru.yandex.qatools.allure.annotations.Stories;
 
 import static com.codeborne.selenide.Selenide.sleep;
-import static com.spbstu.lab4.TestWebsiteSelenide.differentElementsPages;
-import static com.spbstu.lab4.TestWebsiteSelenide.homePageSelenide;
-import static com.spbstu.lab4.enums.DIFF_ELEMENTS_DATA.*;
+import static com.spbstu.lab4.TestEpamWebsiteSelenide.differentElementsPages;
+import static com.spbstu.lab4.TestEpamWebsiteSelenide.homePageSelenide;
+import static com.spbstu.lab4.enums.DIFF_ELEMENTS_DATA.SELECT_ELEMENTS;
 import static org.aeonbits.owner.ConfigFactory.create;
 
 @Listeners(com.spbstu.lab4.allure.Allure.class)
@@ -25,7 +28,7 @@ public class TestLab4 {
         TestConfig cfg = create(TestConfig.class);
         com.codeborne.selenide.Configuration.timeout = 6000;
         com.codeborne.selenide.Configuration.browser = "chrome";
-        TestWebsiteSelenide.init();
+        TestEpamWebsiteSelenide.init();
     }
 
     @Test
@@ -38,17 +41,18 @@ public class TestLab4 {
         homePageSelenide.checkIconsAndTextsExists();
         homePageSelenide.checkMainTitle(PAGE_DATA.MAIN_HEADER.str);
         homePageSelenide.checkMainText(PAGE_DATA.HOME_PAGE.str);
-        homePageSelenide.checkServiceButtons(PAGE_DATA.SERVICE.strAr);
+        homePageSelenide.checkServiceButtons(PAGE_DATA.SERVICE.strArVal);
 
         differentElementsPages.differentElementsPageButton.click();
-        differentElementsPages.checkDiffBoxexExists();
-        differentElementsPages.selectBoxElements(CHECK_BOXES.strAr[2]);
-        differentElementsPages.selectBoxElements(CHECK_BOXES.strAr[0]);
-        differentElementsPages.selectRadioElements(RADIOS.strAr[3]);
-        differentElementsPages.selectColorElement(DROP_COLORS.strAr[3]);
-        differentElementsPages.selectBoxElements(CHECK_BOXES.strAr[0]);
-        differentElementsPages.selectBoxElements(CHECK_BOXES.strAr[2]);
-        differentElementsPages.checkSelectedElements(SELECT_ELEMENTS.strAr);
+        differentElementsPages.checkDiffBoxesExists();
+
+        differentElementsPages.selectBoxElements(CHECK_BOX.WIND.getName());
+        differentElementsPages.selectBoxElements(CHECK_BOX.WATER.getName());
+        differentElementsPages.selectRadioElements(RADIO.SELEN.getName());
+        differentElementsPages.selectColorElement(DROP_COLOR.YELLOW.getName());
+        differentElementsPages.selectBoxElements(CHECK_BOX.WATER.getName());
+        differentElementsPages.selectBoxElements(CHECK_BOX.WIND.getName());
+        differentElementsPages.checkSelectedElements(SELECT_ELEMENTS.strArVal);
     }
 
     @Test

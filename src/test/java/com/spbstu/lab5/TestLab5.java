@@ -4,15 +4,15 @@ import com.epam.jdi.uitests.web.selenium.elements.composite.WebSite;
 import com.epam.jdi.uitests.web.testng.testRunner.TestNGBase;
 import com.spbstu.lab5.entities.MetalsAndColorsDataSet;
 import com.spbstu.lab5.enums.PAGE_DATA;
-import com.spbstu.lab5.utilities.TestConfig;
+import com.spbstu.lab5.util.TestConfig;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static com.epam.jdi.uitests.core.settings.JDISettings.driverFactory;
-import static com.spbstu.lab5.FilesLoader.getAllData;
-import static com.spbstu.lab5.TestWebsiteSelenide.homePageJDI;
-import static com.spbstu.lab5.TestWebsiteSelenide.metalsAndColorsPageJDI;
+import static com.spbstu.lab5.TestEpamWebSiteSelenide.homePageJDI;
+import static com.spbstu.lab5.TestEpamWebSiteSelenide.metalsAndColorsPageJDI;
+import static com.spbstu.lab5.util.FilesLoader.getAllData;
 import static org.aeonbits.owner.ConfigFactory.create;
 
 public class TestLab5 extends TestNGBase {
@@ -26,13 +26,13 @@ public class TestLab5 extends TestNGBase {
     @BeforeSuite
     public void beforeSuite() {
         driverFactory.setDriverPath(create(TestConfig.class).driverFolder());
-        WebSite.init(TestWebsiteSelenide.class);
+        WebSite.init(TestEpamWebSiteSelenide.class);
         driverFactory.getDriver();
 
         homePageJDI.open();
         homePageJDI.checkOpened();
-        TestWebsiteSelenide.login(PAGE_DATA.LOGIN.str, PAGE_DATA.PASSWORD.str);
-        TestWebsiteSelenide.openMetalsAndColorsPage();
+        TestEpamWebSiteSelenide.login(PAGE_DATA.LOGIN.str, PAGE_DATA.PASSWORD.str);
+        TestEpamWebSiteSelenide.openMetalsAndColorsPage();
         metalsAndColorsPageJDI.vegetables.select("Salad");
     }
 

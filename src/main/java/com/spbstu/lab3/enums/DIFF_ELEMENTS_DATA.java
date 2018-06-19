@@ -11,10 +11,10 @@ public enum DIFF_ELEMENTS_DATA {
                     "Water: condition changed to true",
                     "Wind: condition changed to true"});
 
-    public String[] strAr;
+    public String[] strArVal;
     public String str;
 
     DIFF_ELEMENTS_DATA(String[] strings) {
-        strAr = strings;
+        strArVal = strings;
     }
 }

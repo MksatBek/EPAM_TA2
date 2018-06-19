@@ -13,7 +13,7 @@ public enum PAGE_DATA {
     HOME_PAGE("LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR."),
     SERVICE(new String[]{"Service", "Support", "Dates", "Complex Table", "Simple Table", "Table with pages", "Different elements"});
 
-    public String[] strAr;
+    public String[] strArVal;
     public String str;
     public Integer i;
 
@@ -25,7 +25,7 @@ public enum PAGE_DATA {
         this.i = i;
     }
 
-    PAGE_DATA(String[] strAr) {
-        this.strAr = strAr;
+    PAGE_DATA(String[] strArVal) {
+        this.strArVal = strArVal;
     }
 }
