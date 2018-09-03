@@ -31,7 +31,7 @@ public class TestLab5 extends TestNGBase {
 
         homePageJDI.open();
         homePageJDI.checkOpened();
-        TestEpamWebSiteSelenide.login(PAGE_DATA.LOGIN.str, PAGE_DATA.PASSWORD.str);
+        User.log();
         TestEpamWebSiteSelenide.openMetalsAndColorsPage();
         metalsAndColorsPageJDI.vegetables.select("Salad");
     }
