@@ -8,4 +8,7 @@ public class User {
         this.name = name;
         this.password = password;
     }
+     public static void log(){
+        login(PAGE_DATA.LOGIN.str, PAGE_DATA.PASSWORD.str);
+    }
 }
